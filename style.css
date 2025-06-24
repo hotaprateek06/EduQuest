@@ -1,0 +1,248 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: url("image.webp") no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.wrapper{
+    padding-top: 60px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.screen, .quiz-screen, .sections, #result{
+   animation: fadeIn 0.5s ease-in-out;    
+}
+
+#nav{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left:0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+}
+
+#start,#instructions,#result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    width: 90%;
+    margin: 60px auto;
+    padding: 35px 25px;
+    background: linear-gradient(to right,#FFECD2,#FCB69F);
+    border-radius: 12px;
+    box-sizing: 0 0 12px rgba(0,0,0,0.2);
+
+}
+
+#start button,#instructions button{
+    margin-top: 25px;
+}
+
+#instructions ul{
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+.sections-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    margin:20px 0;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.quiz-screen{
+    margin-top: 20px;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 90%;
+    margin:40px auto;
+    color: black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    background: linear-gradient(to right, #ffdee9, #85fffc);
+
+}
+
+.options{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.options label{
+    background-color: #fff;
+    border:2px solid #ccc;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    color: black;
+}
+
+.options label:hover {
+  background-color: #e9ecef;
+  transform: scale(1.02);
+}
+
+.options label.correct {
+  background-color: #d4edda !important;
+  border-color: #28a745 !important;
+  color: #155724 !important;
+  pointer-events: none;
+}
+
+.options label.wrong {
+  background-color: #f8d7da !important;
+  border-color: #dc3545 !important;
+  color: #721c24 !important;
+  pointer-events: none;
+}
+
+.options input[type="radio"] {
+  margin-right: 10px;
+}
+
+.next-btn, .prev-btn, .submit-btn, .res-btn, .gth-btn{
+ display: block;
+ margin:25px auto 0;
+}
+
+#result{
+    min-height: calc(100vh-200px);
+}
+
+#result .result-box {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.result-box h1 {
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #1f1f1f;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  font-size: 14px;
+  margin-top: 60px;
+}
+
+.footer h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 15px 0;
+  font-size: 24px;
+}
+
+.footer-icons a {
+  color: white;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.footer-icons a:hover {
+  transform: scale(1.2);
+  color: #00bcd4;
+}
+
+@media (max-width: 768px) {
+  .sections-btn {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+  }
+
+  .sections-btn.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+    text-align: center;
+    width: 100%;
+    background-color: #007bff;
+  }
+
+  .sections-btn button {
+    width: 90%;
+    margin: 10px auto;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 769px) {
+  .sections-btn {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

@@ -10,7 +10,7 @@ html, body {
   background: url("image.webp") no-repeat center center fixed;
   background-size: cover;
   overflow-x: hidden;
-   background-attachment: fixed;
+   background-attachment: scroll;
 }
 
 .wrapper{

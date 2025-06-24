@@ -73,18 +73,20 @@ function jumpToSection(sectionNum) {
     });
 }
 
-nextButtons.forEach((btn, i) => {
+prevButtons.forEach(btn => {
     btn.onclick = () => {
-        showQuestion(i + 1);
+        if (currentQuestionIndex > 0) {
+            showQuestion(currentQuestionIndex - 1);
+        }
     };
 });
-
-prevButtons.forEach((btn, i) => {
+nextButtons.forEach(btn => {
     btn.onclick = () => {
-        showQuestion(i - 1);
+        if (currentQuestionIndex < quizScreens.length - 1) {
+            showQuestion(currentQuestionIndex + 1);
+        }
     };
 });
-
 
 document.querySelectorAll("input[type='radio']").forEach(radio => {
     radio.addEventListener("change", () => {

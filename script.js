@@ -148,17 +148,22 @@ function showResult() {
     document.getElementById("correct").innerText = correct;
     document.getElementById("incorrect").innerText = incorrect;
     document.getElementById("score").innerText = score;
-}
 
-function resetQuizData() {
+    function resetQuizData() {
     score = 0;
     attempted = 0;
     correct = 0;
     incorrect = 0;
     currentQuestionIndex = 0;
 
-    document.querySelectorAll("input[type='radio']").forEach(r => r.checked = false);
-    document.querySelectorAll("label").forEach(l => l.classList.remove("correct", "wrong"));
+    document.querySelectorAll("input[type='radio']").forEach(r => {
+        r.checked = false;
+        r.disabled = false; 
+    });
+
+    document.querySelectorAll("label").forEach(l => {
+        l.classList.remove("correct", "wrong");
+    });
 }
 function restartQuiz() {
     resetQuizData();

@@ -108,12 +108,12 @@ function evaluateAnswer(i) {
     const answer = selected.value;
     const qid = name;
 
-    
+    if (selected.disabled) return;
+    attempted++;
+
     if (selected.parentElement.classList.contains("correct") || selected.parentElement.classList.contains("wrong")) {
         return;
     }
-
-    attempted++;
 
     options.forEach(opt => opt.parentElement.classList.remove("correct", "wrong"));
 
@@ -131,8 +131,9 @@ function evaluateAnswer(i) {
             }
         });
     }
-}
 
+    options.forEach(opt => opt.disabled = true);
+}
 
 submitBtn.onclick = showResult;
 

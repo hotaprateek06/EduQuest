@@ -14,7 +14,6 @@ html, body {
 }
 
 .wrapper{
-    padding-top: 60px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,6 +30,7 @@ html, body {
 }
 
 #nav{
+    position:sticky;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     top: 0;
@@ -59,7 +59,7 @@ html, body {
     justify-content: center;
     max-width: 800px;
     width: 90%;
-    margin: 60px auto;
+    margin: 90px auto;
     padding: 35px 25px;
     background: linear-gradient(to right,#FFECD2,#FCB69F);
     border-radius: 12px;
